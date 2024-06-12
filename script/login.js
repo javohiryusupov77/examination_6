@@ -43,17 +43,19 @@ async function login() {
     });
 
     const data = await response.json();
-    const { access_token, refresh_token } = data; // {}
-
-    sessionStorage.setItem("access_token", access_token);
-    localStorage.setItem("refresh_token", refresh_token);
-
-    const hasToken = checkToken();
-    // if (hasToken) {
-    //   redirect("/index.html");
-    // }
+    console.log(data);
+    if (data.statusCode == 401){
+       alert('Login parol xato')
+    }else{
+      const { access_token, refresh_token } = data; // {}
+      sessionStorage.setItem("access_token", access_token);
+      localStorage.setItem("refresh_token", refresh_token);
+      const hasToken = checkToken();
+      if (hasToken) {
+        redirect("/index.html");
+      }}
   } catch (error) {
     console.error;
   }
 }
-// console.log("email " + "john@mail.com" +  " password " +  " changeme");
+console.log("email " + "john@mail.com" +  " password " +  " changeme");

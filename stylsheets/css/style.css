@@ -9,7 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden;
+    overflow: auto;
     animation: backgroundAnimation 10s infinite alternate;
   }
   
