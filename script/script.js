@@ -12,6 +12,8 @@ let products = [];
 document.addEventListener("DOMContentLoaded", () => {
   if (!checkToken()) {
     redirect("/login.html");
+  } else {
+    renderProducts();
   }
 });
 
@@ -28,7 +30,7 @@ function handleFormSubmit(event) {
   const newProduct = {
     id: Date.now(),
     title: titleInput.value.trim(),
-    price: parseFloat(priceInput.value.trim()).toFixed(2),
+    price: (priceInput.value.trim()),
     description: descriptionInput.value.trim(),
   };
 
@@ -37,14 +39,14 @@ function handleFormSubmit(event) {
     console.log(products);
 
     clearFormInputs();
-    addProductToDOM(newProduct);
+    renderProducts();
   } else {
     alert("All fields are required and must be filled out correctly.");
   }
 }
 
 function validateProduct(product) {
-  return product.title && product.price && product.description;
+  return product.title && !isNaN(product.price) && product.description;
 }
 
 function clearFormInputs() {
@@ -53,21 +55,23 @@ function clearFormInputs() {
   descriptionInput.value = '';
 }
 
-function addProductToDOM(product) {
-  const productDiv = document.createElement("div");
-  productDiv.classList.add("product");
+function renderProducts() {
+  productsContainer.innerHTML = '';
+  products.map(product => {
+    const productDiv = document.createElement("div");
+    productDiv.classList.add("product");
 
-  const titleElem = document.createElement("h1");
-  const priceElem = document.createElement("p");
-  const descriptionElem = document.createElement("h3");
+    const titleElem = document.createElement("h1");
+    const priceElem = document.createElement("p");
+    const descriptionElem = document.createElement("h3");
 
-  titleElem.textContent = product.title;
-  priceElem.textContent = `$${product.price}`;
-  descriptionElem.textContent = product.description;
+    titleElem.textContent = product.title;
+    priceElem.textContent = `$${product.price}`;
+    descriptionElem.textContent = product.description;
 
-  productDiv.append(titleElem, priceElem, descriptionElem);
-  productsContainer.appendChild(productDiv);
+    productDiv.append(titleElem, priceElem, descriptionElem);
+    productsContainer.append(productDiv);
 
-  // Animation effect
-  productDiv.classList.add("fade-in");
+    productDiv.classList.add("fade-in");
+  });
 }
