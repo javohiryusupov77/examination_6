@@ -1,0 +1,196 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundAnimation 10s infinite alternate;
+  }
+  
+  main {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: mainFadeIn 1.5s ease-out;
+  }
+  
+  h1, h3, p {
+    margin: 10px 0;
+    animation: textFadeIn 2s ease-out;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    animation: formSlideIn 1.5s ease-out;
+  }
+  
+  input, textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 1rem;
+    animation: inputFadeIn 2s ease-out;
+  }
+  
+  input:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.4);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: focusGlow 1s infinite alternate;
+  }
+  
+  button {
+    padding: 15px;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    animation: buttonFadeIn 2s ease-out;
+  }
+  
+  button:hover {
+    background: linear-gradient(135deg, #a777e3, #6e8efb);
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    background: linear-gradient(135deg, #5e78db, #965fd3);
+    transform: scale(0.98);
+  }
+  
+  .product-container {
+    margin-top: 20px;
+  }
+  
+  .product {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: productFadeIn 1s ease, slideUp 1s ease;
+  }
+  
+  .fade-in {
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes backgroundAnimation {
+    from {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+    }
+    to {
+        background: linear-gradient(135deg, #a777e3, #6e8efb);
+    }
+  }
+  
+  @keyframes mainFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+  }
+  
+  @keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+  @keyframes formSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes inputFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes focusGlow {
+    from {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+  }
+  
+  @keyframes buttonFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+  }
+  
+  @keyframes productFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideUp {
+    from {
+        transform: translateY(30px);
+    }
+    to {
+        transform: translateY(0);
+    }
+  }
+  
