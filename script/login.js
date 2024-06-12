@@ -56,4 +56,4 @@ async function login() {
     console.error;
   }
 }
-console.log("email " + "john@mail.com" +  " password " +"");
+console.log("email " + "john@mail.com" +  " password " +  " changeme");
