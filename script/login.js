@@ -49,11 +49,11 @@ async function login() {
     localStorage.setItem("refresh_token", refresh_token);
 
     const hasToken = checkToken();
-    if (hasToken) {
-      redirect("/index.html");
-    }
+    // if (hasToken) {
+    //   redirect("/index.html");
+    // }
   } catch (error) {
     console.error;
   }
 }
-console.log("email " + "john@mail.com" +  " password " +  " changeme");
+// console.log("email " + "john@mail.com" +  " password " +  " changeme");
