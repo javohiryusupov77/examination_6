@@ -30,7 +30,7 @@ function handleFormSubmit(event) {
   const newProduct = {
     id: Date.now(),
     title: titleInput.value.trim(),
-    price: (priceInput.value.trim()),
+    price: priceInput.value.trim(),
     description: descriptionInput.value.trim(),
   };
 
@@ -57,21 +57,29 @@ function clearFormInputs() {
 
 function renderProducts() {
   productsContainer.innerHTML = '';
-  products.map(product => {
+  products.forEach(product => {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product");
 
     const titleElem = document.createElement("h1");
     const priceElem = document.createElement("p");
     const descriptionElem = document.createElement("h3");
+    const deleteBtn = document.createElement("button");
 
     titleElem.textContent = product.title;
     priceElem.textContent = `$${product.price}`;
     descriptionElem.textContent = product.description;
+    deleteBtn.textContent = "Delete";
+    deleteBtn.addEventListener("click", () => handleDeleteProduct(product.id));
 
-    productDiv.append(titleElem, priceElem, descriptionElem);
+    productDiv.append(titleElem, priceElem, descriptionElem, deleteBtn);
     productsContainer.append(productDiv);
 
     productDiv.classList.add("fade-in");
   });
+}
+
+function handleDeleteProduct(productId) {
+  products = products.filter(product => product.id !== productId);
+  renderProducts();
 }
