@@ -45,7 +45,7 @@ async function login() {
     const data = await response.json();
     console.log(data);
     if (data.statusCode == 401){
-       alert('Login yoki Eemail xato')
+       alert('Login yoki Email xato')
     }else{
       const { access_token, refresh_token } = data; // {}
       sessionStorage.setItem("access_token", access_token);
