@@ -9,6 +9,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    animation: backgroundAnimation 10s infinite alternate;
   }
   
   .main-wrapper {
@@ -122,6 +123,14 @@ body {
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+  @keyframes backgroundAnimation {
+    from {
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+    }
+    to {
+        background: linear-gradient(135deg, #a777e3, #6e8efb);
     }
   }
   
