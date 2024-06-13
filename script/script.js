@@ -57,7 +57,7 @@ function clearFormInputs() {
 
 function renderProducts() {
   productsContainer.innerHTML = '';
-  products.forEach(product => {
+  products.map(product => {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product");
 
