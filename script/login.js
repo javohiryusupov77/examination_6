@@ -45,7 +45,7 @@ async function login() {
     const data = await response.json();
     console.log(data);
     if (data.statusCode == 401){
-       alert('Login parol xato')
+       alert('Login yoki Eemail xato')
     }else{
       const { access_token, refresh_token } = data; // {}
       sessionStorage.setItem("access_token", access_token);
